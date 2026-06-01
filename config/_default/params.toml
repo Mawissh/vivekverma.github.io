@@ -1,0 +1,8 @@
+[appearance]
+  theme_day = "minimal"
+  theme_night = "minimal"
+  font = "native"
+  font_size = "L"
+
+[marketing]
+  seo = true
