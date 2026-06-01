@@ -1,0 +1,7 @@
+baseURL = "https://vivekverma.github.io/"
+languageCode = "en-us"
+title = "My Site"
+theme = "your-theme-name"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
