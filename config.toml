@@ -1,6 +1,6 @@
 baseURL = "https://vivekverma.github.io/"
 languageCode = "en-us"
-title = "My Site"
+title = "Vivek Verma - Researcher & Academic"
 theme = "hugo-blox-builder"
 
 [outputs]
