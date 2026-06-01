@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivek Verma | Ph.D. Researcher, IIT Roorkee</title>
+  <meta name="description" content="Vivek Verma — Ph.D. researcher at IIT Roorkee working on quantum algorithms, image encryption, chaos theory, and post-quantum cryptography." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:        #0d1117;
+      --bg2:       #161b22;
+      --bg3:       #1e2430;
+      --border:    rgba(255,255,255,0.08);
+      --border2:   rgba(255,255,255,0.15);
+      --txt:       #e6edf3;
+      --txt2:      #8b949e;
+      --txt3:      #56646e;
+      --accent:    #3b82f6;
+      --accent2:   #1d4ed8;
+      --accent-lt: rgba(59,130,246,0.12);
+      --accent-lt2:rgba(59,130,246,0.06);
+      --green:     #22c55e;
+      --green-lt:  rgba(34,197,94,0.12);
+      --amber:     #f59e0b;
+      --amber-lt:  rgba(245,158,11,0.12);
+      --radius:    10px;
+      --radius-lg: 16px;
+      --shadow:    0 1px 3px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3);
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'DM Serif Display', serif;
+      --nav-h: 60px;
+    }
+
+    /* ─── BASE ───────────────────────────────────────────────── */
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--txt);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
+    a:hover { opacity: 0.8; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--txt);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--txt2);
+      margin-bottom: 40px;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+    nav .container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--txt);
+      letter-spacing: -0.3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--txt2);
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--txt); opacity: 1; }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta {
+      font-size: 13px;
+      padding: 7px 16px;
+      border-radius: var(--radius);
+      background: var(--accent-lt);
+      color: var(--accent);
+      border: 1px solid rgba(59,130,246,0.3);
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: rgba(59,130,246,0.2); opacity: 1; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #home {
+      padding-top: calc(var(--nav-h) + 72px);
+      padding-bottom: 80px;
+      border-top: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-lt);
+      border: 1px solid rgba(59,130,246,0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-badge::before { content: '●'; font-size: 8px; }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-role {
+      font-size: 16px;
+      color: var(--txt2);
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+    .hero-inst {
+      font-size: 14px;
+      color: var(--txt3);
+      margin-bottom: 24px;
+    }
+    .hero-bio {
+      font-size: 15px;
+      color: var(--txt2);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+    .hero-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .chip {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border2);
+      color: var(--txt2);
+      background: var(--bg2);
+      font-weight: 400;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-body);
+      transition: all 0.15s;
+    }
+    .btn-blue {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-blue:hover { background: var(--accent2); opacity: 1; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--txt2);
+      border: 1px solid var(--border2);
+    }
+    .btn-ghost:hover { color: var(--txt); border-color: var(--border2); background: var(--bg2); opacity: 1; }
+    .avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: #fff;
+      border: 3px solid var(--border2);
+      box-shadow: var(--shadow);
+    }
+    .avatar-links { display: flex; gap: 10px; }
+    .avatar-link {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--txt2);
+      font-size: 15px;
+      transition: all 0.15s;
+    }
+    .avatar-link:hover { color: var(--txt); border-color: var(--border2); opacity: 1; }
+
+    /* ─── STATS ──────────────────────────────────────────────── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .stat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--border2); }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 30px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--txt3);
+      line-height: 1.4;
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--txt2);
+      margin-bottom: 16px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .info-block { display: flex; flex-direction: column; gap: 12px; }
+    .info-row {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .info-row .lbl { font-size: 11px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .info-row .val { font-size: 13px; color: var(--txt); font-weight: 500; }
+
+    /* ─── EDUCATION ──────────────────────────────────────────── */
+    .edu-list { display: flex; flex-direction: column; gap: 16px; }
+    .edu-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: border-color 0.2s;
+    }
+    .edu-card:hover { border-color: var(--border2); }
+    .edu-year {
+      font-size: 12px;
+      color: var(--txt3);
+      min-width: 80px;
+      padding-top: 4px;
+    }
+    .edu-degree { font-size: 15px; font-weight: 500; color: var(--txt); margin-bottom: 4px; }
+    .edu-inst { font-size: 13px; color: var(--txt2); margin-bottom: 6px; }
+    .edu-meta { font-size: 12px; color: var(--txt3); }
+    .edu-meta span { color: var(--accent); font-weight: 500; }
+
+    /* ─── PUBLICATIONS ───────────────────────────────────────── */
+    .pub-list { display: flex; flex-direction: column; gap: 14px; }
+    .pub-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+    .pub-card:hover { border-color: rgba(59,130,246,0.35); }
+    .pub-num {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--txt3);
+      min-width: 28px;
+      padding-top: 2px;
+    }
+    .pub-title { font-size: 14px; font-weight: 500; color: var(--txt); line-height: 1.5; margin-bottom: 8px; }
+    .pub-authors { font-size: 13px; color: var(--txt2); margin-bottom: 6px; }
+    .pub-journal { font-size: 13px; color: var(--txt3); margin-bottom: 10px; }
+    .pub-journal em { color: var(--txt2); font-style: normal; }
+    .pub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .badge-published { background: var(--green-lt); color: var(--green); }
+    .badge-submitted { background: var(--amber-lt); color: var(--amber); }
+    .badge-journal { background: var(--accent-lt); color: var(--accent); }
+    .badge-doi {
+      background: transparent;
+      border: 1px solid var(--border2);
+      color: var(--txt3);
+      font-weight: 400;
+    }
+
+    /* ─── CONFERENCES ────────────────────────────────────────── */
+    .conf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .conf-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      transition: border-color 0.2s;
+    }
+    .conf-card:hover { border-color: var(--border2); }
+    .conf-year {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-lt2);
+      padding: 3px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .conf-name { font-size: 13px; font-weight: 500; color: var(--txt); margin-bottom: 3px; }
+    .conf-detail { font-size: 12px; color: var(--txt3); line-height: 1.4; }
+    .conf-card.featured { border-color: rgba(59,130,246,0.3); background: var(--accent-lt2); }
+    .conf-card.featured .conf-name { color: var(--accent); }
+
+    /* ─── AWARDS ─────────────────────────────────────────────── */
+    .award-list { display: flex; flex-direction: column; gap: 10px; }
+    .award-row {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .award-row:last-child { border-bottom: none; }
+    .award-year { font-size: 12px; color: var(--txt3); padding-top: 2px; }
+    .award-name { font-size: 14px; font-weight: 500; color: var(--txt); margin-bottom: 3px; }
+    .award-desc { font-size: 13px; color: var(--txt2); }
+
+    /* ─── TEACHING ───────────────────────────────────────────── */
+    .teach-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .teach-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+    }
+    .teach-card:hover { border-color: var(--border2); }
+    .teach-course { font-size: 13px; font-weight: 500; color: var(--txt); margin-bottom: 4px; }
+    .teach-role { font-size: 12px; color: var(--txt3); margin-bottom: 3px; }
+    .teach-sem { font-size: 11px; color: var(--accent); }
+
+    /* ─── SKILLS ─────────────────────────────────────────────── */
+    .skills-section { display: flex; flex-direction: column; gap: 24px; }
+    .skill-group-label { font-size: 12px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; }
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-chip {
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      color: var(--txt2);
+      background: var(--bg2);
+      transition: all 0.15s;
+    }
+    .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── REFERENCES ─────────────────────────────────────────── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .ref-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      transition: border-color 0.2s;
+    }
+    .ref-card:hover { border-color: var(--border2); }
+    .ref-name { font-size: 15px; font-weight: 500; color: var(--txt); margin-bottom: 4px; }
+    .ref-role { font-size: 13px; color: var(--txt2); margin-bottom: 2px; }
+    .ref-dept { font-size: 12px; color: var(--txt3); margin-bottom: 10px; }
+    .ref-email { font-size: 13px; color: var(--accent); }
+
+    /* ─── CONTACT ────────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .contact-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color 0.2s;
+    }
+    .contact-card:hover { border-color: var(--border2); }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: var(--accent-lt);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .contact-lbl { font-size: 11px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .contact-val { font-size: 13px; color: var(--txt); font-weight: 500; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--txt3);
+    }
+    footer span { color: var(--txt2); }
+
+    /* ─── FADE-IN ANIMATION ──────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .avatar-wrap { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .conf-grid, .teach-grid, .ref-grid, .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────── -->
+  <nav>
+    <div class="container">
+      <div class="nav-logo">Vivek Verma</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="mailto:vivek_v@ma.iitr.ac.in" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">Ph.D. Researcher · IIT Roorkee</div>
+          <h1 class="hero-name">Vivek<br><em>Verma</em></h1>
+          <p class="hero-role">Department of Mathematics</p>
+          <p class="hero-inst">Indian Institute of Technology Roorkee &nbsp;·&nbsp; Expected 2026</p>
+          <p class="hero-bio">
+            I develop classical and quantum algorithms for secure multimedia data encryption — combining chaos theory, memristive neural networks, and quantum unitary operators to build next-generation cryptographic systems.
+          </p>
+          <div class="hero-interests">
+            <span class="chip">Quantum Image Encryption</span>
+            <span class="chip">Chaos Theory</span>
+            <span class="chip">Post-Quantum Cryptography</span>
+            <span class="chip">Memristor Systems</span>
+            <span class="chip">Image Watermarking</span>
+            <span class="chip">QNN</span>
+            <span class="chip">Compressive Sensing</span>
+            <span class="chip">Lattice Theory</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#publications" class="btn btn-blue">View Publications</a>
+            <!-- To add CV download: replace # with your CV file path, e.g. "cv.pdf" -->
+            <a href="#" class="btn btn-ghost">Download CV</a>
+            <a href="https://scholar.google.com" target="_blank" class="btn btn-ghost">Google Scholar ↗</a>
+          </div>
+        </div>
+
+        <div class="avatar-wrap">
+          <!-- Replace the initials with an <img> tag once you have a photo:
+               <img src="photo.jpg" style="width:160px;height:160px;border-radius:50%;object-fit:cover;" />
+          -->
+          <div class="avatar">VV</div>
+          <div class="avatar-links">
+            <a href="https://linkedin.com" target="_blank" class="avatar-link" title="LinkedIn">in</a>
+            <a href="https://scholar.google.com" target="_blank" class="avatar-link" title="Google Scholar">GS</a>
+            <!-- Add more: GitHub, ResearchGate, ORCID, etc. -->
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="stats-bar fade-in">
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Journal Publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-lbl">Paper Under Review</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">13+</div>
+          <div class="stat-lbl">Conferences & Workshops</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">AIR 68</div>
+          <div class="stat-lbl">CSIR-NET Rank</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container fade-in">
+      <h2 class="section-title">About</h2>
+      <p class="section-sub">Background, education and research focus</p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a Ph.D. candidate in the Department of Mathematics at the Indian Institute of Technology Roorkee, working under the supervision of <strong>Dr. Sanjeev Kumar</strong>. My doctoral research focuses on developing classical and quantum algorithms for secure multimedia data encryption and watermarking.
+          </p>
+          <p>
+            My work sits at the intersection of chaos theory, memristive systems, and quantum computing. I design novel image encryption schemes using chaotic maps, Hopfield neural networks, and quantum-inspired unitary operators, with a growing focus on post-quantum cryptography and lattice-based problems.
+          </p>
+          <p>
+            I have been recognised with the ANRF Travel Grant (Govt. of India) and a Student Research Scholarship from QIP 2026, and I have served as a Trusted Reviewer for IOP Publishing journals including Physica Scripta and Journal of Optics.
+          </p>
+        </div>
+
+        <div class="info-block">
+          <div class="info-row">
+            <div class="lbl">Supervisor</div>
+            <div class="val">Dr. Sanjeev Kumar, Professor</div>
+          </div>
+          <div class="info-row">
+            <div class="lbl">Department</div>
+            <div class="val">Mathematics, IIT Roorkee</div>
+          </div>
+          <div class="info-row">
+            <div class="lbl">Expected Award</div>
+            <div class="val">2026</div>
+          </div>
+          <div class="info-row">
+            <div class="lbl">Email</div>
+            <div class="val"><a href="mailto:vivek_v@ma.iitr.ac.in">vivek_v@ma.iitr.ac.in</a></div>
+          </div>
+          <div class="info-row">
+            <div class="lbl">Location</div>
+            <div class="val">Roorkee, Uttarakhand, India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <h3 style="font-family:var(--font-display);font-size:22px;font-weight:400;margin:52px 0 20px;">Education</h3>
+      <div class="edu-list">
+
+        <div class="edu-card">
+          <div class="edu-year">2021 – present</div>
+          <div>
+            <div class="edu-degree">Ph.D. in Mathematics</div>
+            <div class="edu-inst">Indian Institute of Technology Roorkee</div>
+            <div class="edu-meta">
+              CGPA <span>8.5</span> &nbsp;·&nbsp;
+              Thesis: <em style="font-style:italic;color:var(--txt2)">Advancements in Classical and Quantum Algorithms for Secure Multimedia Data Encryption and Watermarking</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-year">2017 – 2019</div>
+          <div>
+            <div class="edu-degree">M.Sc. Mathematics and Computing</div>
+            <div class="edu-inst">Indian Institute of Technology Dhanbad</div>
+            <div class="edu-meta">CGPA <span>8.93</span></div>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-year">2013 – 2016</div>
+          <div>
+            <div class="edu-degree">B.Sc. Mathematics</div>
+            <div class="edu-inst">Dr. Ram Manohar Lohia Awadh University, Ayodhya</div>
+            <div class="edu-meta">Percentage <span>62.22%</span></div>
+          </div>
+        </div>
+
+        <!-- ADD NEW DEGREE HERE following the same pattern -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PUBLICATIONS ───────────────────────────────────────────── -->
+  <section id="publications">
+    <div class="container fade-in">
+      <h2 class="section-title">Publications</h2>
+      <p class="section-sub">Peer-reviewed journal articles</p>
+
+      <div class="pub-list">
+
+        <!-- PUB 1 -->
+        <div class="pub-card">
+          <div class="pub-num">1</div>
+          <div>
+            <div class="pub-title">Novel image encryption algorithm using hybrid 3D-ICPCM and Hessenberg decomposition</div>
+            <div class="pub-authors">Verma, V., Kumar, S. and Rani, N.</div>
+            <div class="pub-journal"><em>Nonlinear Dynamics</em> 112, 10583–10609 (2024)</div>
+            <div class="pub-tags">
+              <span class="badge badge-published">Published</span>
+              <span class="badge badge-journal">Nonlinear Dynamics</span>
+              <a href="https://doi.org/10.1007/s11071-024-09620-w" target="_blank" class="badge badge-doi">DOI ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PUB 2 -->
+        <div class="pub-card">
+          <div class="pub-num">2</div>
+          <div>
+            <div class="pub-title">Quantum image encryption algorithm based on 3D-BNM chaotic map</div>
+            <div class="pub-authors">Verma, V., Kumar, S.</div>
+            <div class="pub-journal"><em>Nonlinear Dynamics</em> 113, 3829–3855 (2025)</div>
+            <div class="pub-tags">
+              <span class="badge badge-published">Published</span>
+              <span class="badge badge-journal">Nonlinear Dynamics</span>
+              <a href="https://doi.org/10.1007/s11071-024-10403-6" target="_blank" class="badge badge-doi">DOI ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PUB 3 -->
+        <div class="pub-card">
+          <div class="pub-num">3</div>
+          <div>
+            <div class="pub-title">Quantum inspired image encryption using a memristive Hopfield neural network</div>
+            <div class="pub-authors">Verma V., Tabekoueng Njitacke, Z., Kumar S.</div>
+            <div class="pub-journal"><em>Journal of Information Security and Applications</em> 100, 104464 (2026)</div>
+            <div class="pub-tags">
+              <span class="badge badge-published">Published</span>
+              <span class="badge badge-journal">JISA</span>
+              <a href="https://doi.org/10.1016/j.jisa.2026.104464" target="_blank" class="badge badge-doi">DOI ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PUB 4 -->
+        <div class="pub-card">
+          <div class="pub-num">4</div>
+          <div>
+            <div class="pub-title">Quantum inspired image encryption based on Neuron model and Power cube method</div>
+            <div class="pub-authors">Verma V., Tabekoueng Njitacke, Z., Kumar S.</div>
+            <div class="pub-journal">Under review</div>
+            <div class="pub-tags">
+              <span class="badge badge-submitted">Under Review</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✦ ADD NEW PUBLICATION HERE — copy the block above and update fields -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONFERENCES & WORKSHOPS ───────────────────────────────── -->
+  <section id="conferences">
+    <div class="container fade-in">
+      <h2 class="section-title">Conferences & Workshops</h2>
+      <p class="section-sub">Selected presentations, participations, and scholarly meetings</p>
+
+      <div class="conf-grid">
+
+        <div class="conf-card featured">
+          <span class="conf-year">2026</span>
+          <div>
+            <div class="conf-name">QIP 2026 — 29th Annual Quantum Information Processing</div>
+            <div class="conf-detail">University of Latvia, Riga · Jan 24–30, 2026<br>ANRF Travel Grant + Student Research Scholarship recipient</div>
+          </div>
+        </div>
+
+        <div class="conf-card featured">
+          <span class="conf-year">2025</span>
+          <div>
+            <div class="conf-name">TQC 2025 — Theory of Quantum Computation, Communication and Cryptography</div>
+            <div class="conf-detail">IISc Bangalore · Sep 13–19, 2025</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2026</span>
+          <div>
+            <div class="conf-name">IYQSM 2026 — International Young Quantum Scientist's Meet</div>
+            <div class="conf-detail">Jaypee Institute of Technology, Noida · Mar 16–20, 2026</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2025</span>
+          <div>
+            <div class="conf-name">ISQIC — International Symposium on Quantum Information and Communication</div>
+            <div class="conf-detail">TCG CREST, Kolkata · Mar 31–Apr 2, 2025</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2025</span>
+          <div>
+            <div class="conf-name">GIAN Workshop — Dynamical Systems, Chaos Theory: IoT & Cryptography</div>
+            <div class="conf-detail">NIT Jalandhar · Jan 6–11, 2025</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2024</span>
+          <div>
+            <div class="conf-name">IYQSM 2024 — International Young Quantum Scientist's Meet</div>
+            <div class="conf-detail">Jaypee Institute of Technology, Noida · Sep 16–20, 2024</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2024</span>
+          <div>
+            <div class="conf-name">CoDS-2024 — International Conference on Computations and Data Science</div>
+            <div class="conf-detail">IIT Roorkee · Mar 8–10, 2024</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2024</span>
+          <div>
+            <div class="conf-name">ICAMSET-2024 — Applied Mathematical Sciences for Emerging Technologies</div>
+            <div class="conf-detail">Dhanalakshmi Srinivasan University · Dec 13–14, 2024</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2024</span>
+          <div>
+            <div class="conf-name">ICMEMS-2024 — Mathematical Engineering and Management Sciences</div>
+            <div class="conf-detail">UPES, Dehradun · Dec 13–14, 2024</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2024</span>
+          <div>
+            <div class="conf-name">IWATM-2024 — Advanced Topics in Mathematics</div>
+            <div class="conf-detail">IIIT Naya Raipur · Dec 16–20, 2024</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2022</span>
+          <div>
+            <div class="conf-name">RACAM — Recent Advances in Computational Analysis and Modelling</div>
+            <div class="conf-detail">IIT Roorkee · Jun 20–24, 2022</div>
+          </div>
+        </div>
+
+        <div class="conf-card">
+          <span class="conf-year">2022</span>
+          <div>
+            <div class="conf-name">Dynamical Systems, Control and Their Applications</div>
+            <div class="conf-detail">IIT Roorkee · Jul 1–2, 2022</div>
+          </div>
+        </div>
+
+        <!-- ✦ ADD NEW CONFERENCE HERE — copy a conf-card block above -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AWARDS ─────────────────────────────────────────────────── -->
+  <section id="awards">
+    <div class="container fade-in">
+      <h2 class="section-title">Awards & Achievements</h2>
+      <p class="section-sub">Fellowships, scholarships and recognitions</p>
+
+      <div class="award-list">
+
+        <div class="award-row">
+          <div class="award-year">2026</div>
+          <div>
+            <div class="award-name">ANRF Travel Grant — Govt. of India</div>
+            <div class="award-desc">Awarded to attend QIP 2026, University of Latvia, Riga</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2026</div>
+          <div>
+            <div class="award-name">Student Research Scholarship — QIP 2026</div>
+            <div class="award-desc">Awarded by the QIP 2026 Organizing Committee, University of Latvia, Riga</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2024</div>
+          <div>
+            <div class="award-name">Trusted Reviewer — IOP Publishing</div>
+            <div class="award-desc">Physica Scripta and Journal of Optics, Institute of Physics</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2023</div>
+          <div>
+            <div class="award-name">Global Quantum Scholarship</div>
+            <div class="award-desc">Womanium QUANTUM 2023</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2020</div>
+          <div>
+            <div class="award-name">CSIR-NET Qualified — All India Rank 68</div>
+            <div class="award-desc">National Eligibility Test for Lectureship, Council of Scientific and Industrial Research</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2017–18</div>
+          <div>
+            <div class="award-name">MCM Fellowship — Merit-Cum-Means</div>
+            <div class="award-desc">Awarded by IIT Dhanbad (2017 and 2018)</div>
+          </div>
+        </div>
+
+        <div class="award-row">
+          <div class="award-year">2017</div>
+          <div>
+            <div class="award-name">IIT-JAM Qualified</div>
+            <div class="award-desc">Cleared Joint Admission Test for M.Sc. programs at IITs</div>
+          </div>
+        </div>
+
+        <!-- ✦ ADD NEW AWARD HERE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEACHING ────────────────────────────────────────────────── -->
+  <section id="teaching">
+    <div class="container fade-in">
+      <h2 class="section-title">Teaching Experience</h2>
+      <p class="section-sub">Graduate Teaching Fellow and Teaching Assistant roles, IIT Roorkee</p>
+
+      <div class="teach-grid">
+
+        <div class="teach-card">
+          <div class="teach-course">Mathematics I (MAN-001)</div>
+          <div class="teach-role">Graduate Teaching Fellow</div>
+          <div class="teach-sem">Spring 2022 · Fall 2023</div>
+        </div>
+
+        <div class="teach-card">
+          <div class="teach-course">C++ Language (PMA-403)</div>
+          <div class="teach-role">Graduate Teaching Fellow</div>
+          <div class="teach-sem">Fall 2022 · Fall 2024 · Fall 2025</div>
+        </div>
+
+        <div class="teach-card">
+          <div class="teach-course">Mathematics Methods (MAN-002)</div>
+          <div class="teach-role">Graduate Teaching Fellow</div>
+          <div class="teach-sem">Spring 2023</div>
+        </div>
+
+        <div class="teach-card">
+          <div class="teach-course">Linear Algebra, Probability & Statistics (MAI-102)</div>
+          <div class="teach-role">Graduate Teaching Fellow</div>
+          <div class="teach-sem">Spring 2024</div>
+        </div>
+
+        <div class="teach-card">
+          <div class="teach-course">Multivariable Calculus (NPTEL)</div>
+          <div class="teach-role">Teaching Assistant — NPTEL Online Certification</div>
+          <div class="teach-sem">Spring 2024 · Spring 2025 · Spring 2026 · Autumn 2026</div>
+        </div>
+
+        <div class="teach-card">
+          <div class="teach-course">Matrix Analysis (NPTEL)</div>
+          <div class="teach-role">Teaching Assistant — NPTEL Online Certification</div>
+          <div class="teach-sem">Autumn 2026</div>
+        </div>
+
+        <!-- ✦ ADD NEW COURSE HERE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="container fade-in">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Tools, languages and competencies</p>
+
+      <div class="skills-section">
+
+        <div>
+          <div class="skill-group-label">Quantum Computing</div>
+          <div class="skill-chips">
+            <span class="skill-chip">Qiskit</span>
+            <span class="skill-chip">PennyLane</span>
+            <span class="skill-chip">Parametrized Quantum Circuits</span>
+            <span class="skill-chip">Quantum Neural Networks</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-group-label">Programming</div>
+          <div class="skill-chips">
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">PyTorch</span>
+            <span class="skill-chip">MATLAB</span>
+            <span class="skill-chip">C++</span>
+            <span class="skill-chip">LaTeX</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-group-label">Research Areas</div>
+          <div class="skill-chips">
+            <span class="skill-chip">Chaos Theory</span>
+            <span class="skill-chip">Image Encryption</span>
+            <span class="skill-chip">Post-Quantum Cryptography</span>
+            <span class="skill-chip">Lattice Theory</span>
+            <span class="skill-chip">Compressive Sensing</span>
+            <span class="skill-chip">Memristor Dynamics</span>
+            <span class="skill-chip">Image Watermarking</span>
+            <span class="skill-chip">Edge Detection</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="skill-group-label">Academic</div>
+          <div class="skill-chips">
+            <span class="skill-chip">Academic Research</span>
+            <span class="skill-chip">Technical Writing</span>
+            <span class="skill-chip">Peer Review</span>
+            <span class="skill-chip">Teaching</span>
+            <span class="skill-chip">Leadership</span>
+          </div>
+        </div>
+
+        <!-- ✦ ADD NEW SKILL GROUP HERE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REFERENCES ─────────────────────────────────────────────── -->
+  <section id="references">
+    <div class="container fade-in">
+      <h2 class="section-title">References</h2>
+      <p class="section-sub">Available upon request</p>
+
+      <div class="ref-grid">
+
+        <div class="ref-card">
+          <div class="ref-name">Prof. Sanjeev Kumar</div>
+          <div class="ref-role">Professor of Mathematics</div>
+          <div class="ref-dept">Department of Mathematics, IIT Roorkee · Office M-403</div>
+          <a href="mailto:sanjeev.kumar@ma.iitr.ac.in" class="ref-email">sanjeev.kumar@ma.iitr.ac.in</a>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-name">Prof. Raman Balasubramanian</div>
+          <div class="ref-role">Professor of Computer Science and Engineering</div>
+          <div class="ref-dept">Department of CSE, IIT Roorkee · Room S-227</div>
+          <a href="mailto:bala@cs.iitr.ac.in" class="ref-email">bala@cs.iitr.ac.in</a>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-name">Prof. Ram Krishna Pandey</div>
+          <div class="ref-role">Associate Professor of Mathematics</div>
+          <div class="ref-dept">Department of Mathematics, IIT Roorkee · Office M-404</div>
+          <a href="mailto:ram.pandey@ma.iitr.ac.in" class="ref-email">ram.pandey@ma.iitr.ac.in</a>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-name">Prof. Maheshanand</div>
+          <div class="ref-role">Professor of Mathematics</div>
+          <div class="ref-dept">Department of Mathematics, IIT Roorkee · Office M-406</div>
+          <a href="mailto:maheshanand@ma.iitr.ac.in" class="ref-email">maheshanand@ma.iitr.ac.in</a>
+        </div>
+
+        <!-- ✦ ADD NEW REFERENCE HERE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container fade-in">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Reach out for collaborations, queries, or discussions</p>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-lbl">Email</div>
+            <div class="contact-val">
+              <a href="mailto:vivek_v@ma.iitr.ac.in">vivek_v@ma.iitr.ac.in</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-lbl">Address</div>
+            <div class="contact-val">Dept. of Mathematics, IIT Roorkee, Uttarakhand – 247667</div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">🔗</div>
+          <div>
+            <div class="contact-lbl">Profiles</div>
+            <div class="contact-val">
+              <!-- Update these links with your actual profile URLs -->
+              <a href="https://linkedin.com" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+              <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✦ ADD MORE CONTACT ITEMS HERE e.g. GitHub, ResearchGate, ORCID -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Vivek Verma · Department of Mathematics, IIT Roorkee</p>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ────────────────────────────────────────────────── -->
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll-triggered fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active nav link highlighting on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(sec => scrollObserver.observe(sec));
+  </script>
+
+</body>
+</html>
