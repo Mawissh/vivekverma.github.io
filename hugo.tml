@@ -1,5 +1,7 @@
-
 baseURL = "https://mawissh.github.io/"
 languageCode = "en-us"
-title = "My Site"
-theme = "your-theme-name"
+title = "Vivek Verma"
+theme = "your-theme-name"  # Replace with your actual theme
+
+[outputs]
+  home = ["HTML", "JSON"]
